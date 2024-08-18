@@ -6,6 +6,7 @@
         },
         "editor.formatOnSave": true,
     },
+    "python.venvPath": ".",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true
 }
