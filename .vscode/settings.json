@@ -1,12 +1,28 @@
 {
+
     "[python]": {
         "editor.codeActionsOnSave": {
             "source.fixAll": "explicit",
             "source.organizeImports": "explicit"
         },
         "editor.formatOnSave": true,
+        "runItOn": {
+            "commands": [
+                {
+                    "match": "\\.py$",
+                    "isAsync": true,
+                    "isShellCommand": false,
+                    "cmd": "testing.runAll"
+                },
+            ],
+        },
     },
     "python.venvPath": ".",
     "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
