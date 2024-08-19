@@ -6,16 +6,6 @@
             "source.organizeImports": "explicit"
         },
         "editor.formatOnSave": true,
-        "runItOn": {
-            "commands": [
-                {
-                    "match": "\\.py$",
-                    "isAsync": true,
-                    "isShellCommand": false,
-                    "cmd": "testing.runAll"
-                },
-            ],
-        },
     },
     "python.venvPath": ".",
     "files.insertFinalNewline": true,
