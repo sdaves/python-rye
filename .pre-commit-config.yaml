@@ -1,11 +1,3 @@
-steps:
-  - id: rye-test
-    name: rye-test
-    description: rye-test.
-    entry: rye test
-    language: python
-    types: [text]
-
 default_stages: [commit]
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
@@ -30,3 +22,11 @@ repos:
         types: ["dockerfile"]
         entry: hadolint
 
+  - repo: local
+    hooks:
+      - id: pytest-check
+        name: pytest-check
+        entry: rye test
+        language: system
+        pass_filenames: false
+        always_run: true
