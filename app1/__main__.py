@@ -28,13 +28,14 @@ def divide() -> e.Effect[Console, t.Never, None]:
     second = yield from input_("what is the first number? ")
     ans = str(float(first) / float(second))
     yield from print_(f"{first} / {second} = {ans}")
-    yield from print_("ending")
 
 
 def app() -> e.Effect[Console, t.Never, int]:
     """App."""
     yield from print_("start up")
     result = yield from e.catch(divide)()
+    yield from print_("ending")
+
     match result:
         case ZeroDivisionError():
             return -1
@@ -45,8 +46,7 @@ def app() -> e.Effect[Console, t.Never, int]:
 def main() -> int:
     "main function." ""
     run: Runtime = Runtime()
-    run.use(Console()).run(app())
-    return 0
+    return run.use(Console()).run(app())
 
 
 if __name__ == "__main__":
