@@ -14,8 +14,12 @@ cfgv==3.4.0
     # via pre-commit
 cloudpickle==3.0.0
     # via stateless
+colorama==0.4.6
+    # via pytest-watch
 distlib==0.3.8
     # via virtualenv
+docopt==0.6.2
+    # via pytest-watch
 filelock==3.15.4
     # via virtualenv
 identify==2.6.0
@@ -32,6 +36,8 @@ pluggy==1.5.0
     # via pytest
 pre-commit==3.8.0
 pytest==8.3.2
+    # via pytest-watch
+pytest-watch==4.2.0
 pyyaml==6.0.1
     # via pre-commit
 ruff==0.5.5
@@ -41,3 +47,5 @@ typing-extensions==4.12.2
     # via stateless
 virtualenv==20.26.3
     # via pre-commit
+watchdog==4.0.2
+    # via pytest-watch

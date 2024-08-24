@@ -20,7 +20,7 @@ def input_(value: str) -> e.Effect[Console, t.Never, str]:
     return console.input(value)
 
 
-@e.throws(ZeroDivisionError)
+@e.throws(ZeroDivisionError, ValueError)
 def divide() -> e.Effect[Console, t.Never, None]:
     "App."
     yield from print_("start up")
@@ -34,12 +34,13 @@ def app() -> e.Effect[Console, t.Never, int]:
     """App."""
     yield from print_("start up")
     result = yield from e.catch(divide)()
-    yield from print_("ending")
 
     match result:
         case ZeroDivisionError():
+            yield from print_("ending zero division error")
             return -1
         case _:
+            yield from print_("ending success")
             return 0
 
 
